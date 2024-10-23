@@ -4,6 +4,7 @@ import { Header } from './components/layout/Header';
 import { Login } from './pages/Login';
 import { Upload } from './pages/Upload';
 import { AuthGuard } from './components/auth/AuthGuard';
+import { AuthCallback } from './pages/AuthCallback';
 
 const queryClient = new QueryClient();
 
@@ -15,7 +16,9 @@ function App() {
           <Header />
           <main className="pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             
               <Routes>
+              <Route path="/api/auth/callback/github" element={<AuthCallback />} />
                 <Route path="/login" element={<Login />} />
                 <Route
                   path="/"

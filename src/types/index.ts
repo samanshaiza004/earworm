@@ -1,11 +1,4 @@
-export interface User {
-  id: string;
-  username: string;
-  avatarUrl: string;
-  bio?: string;
-  followersCount: number;
-  followingCount: number;
-}
+import { User } from "./auth";
 
 export interface Track {
   id: string;
