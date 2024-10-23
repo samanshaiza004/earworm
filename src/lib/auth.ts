@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface AuthState {
   user: any | null;
@@ -19,9 +19,9 @@ export const useAuth = create<AuthState>((set) => ({
   signInWithGoogle: async () => {
     set({ isLoading: true, error: null });
     try {
-      window.location.href = '/api/auth/signin/google';
+      window.location.href = "/api/auth/signin/google";
     } catch (error) {
-      set({ error: 'Failed to sign in with Google' });
+      set({ error: "Failed to sign in with Google" });
     } finally {
       set({ isLoading: false });
     }
@@ -30,9 +30,9 @@ export const useAuth = create<AuthState>((set) => ({
   signInWithGithub: async () => {
     set({ isLoading: true, error: null });
     try {
-      window.location.href = '/api/auth/signin/github';
+      window.location.href = "/api/auth/signin/github";
     } catch (error) {
-      set({ error: 'Failed to sign in with GitHub' });
+      set({ error: "Failed to sign in with GitHub" });
     } finally {
       set({ isLoading: false });
     }
@@ -41,10 +41,10 @@ export const useAuth = create<AuthState>((set) => ({
   signOut: async () => {
     set({ isLoading: true, error: null });
     try {
-      await fetch('/api/auth/signout', { method: 'POST' });
+      await fetch("/api/auth/signout", { method: "POST" });
       set({ user: null, isAuthenticated: false });
     } catch (error) {
-      set({ error: 'Failed to sign out' });
+      set({ error: "Failed to sign out" });
     } finally {
       set({ isLoading: false });
     }
